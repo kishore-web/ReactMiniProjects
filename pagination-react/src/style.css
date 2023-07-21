@@ -1,23 +1,37 @@
 *, ::after,::before {
   box-sizing: border-box;
-}
-body{
   margin: 0;
   padding: 0;
 }
-.products{
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+body{
+  margin: 0;
   background-color: black;
-  padding: 10px;
+
 }
-img{
+.products{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5px;
+}
+.products__container>img{
   width: 200px;
   height: 150px;
+  object-fit: cover;
+
 }
 .products__container{
   padding: 10px;
   background-color: antiquewhite;
   text-align: center;
 }
+@media screen and (max-width:600px) {
+  .products{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    background-color: black;
+    padding: 10px;
+  }
+}
+

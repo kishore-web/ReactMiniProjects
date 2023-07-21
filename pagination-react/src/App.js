@@ -23,7 +23,7 @@ function App() {
       {
         products.length > 0 && <div
         className="products"> {
-          products.map((prod,id)=>{
+          products.slice(0,5).map((prod,id)=>{
             return(
               <span key={id} className="products__container">
                 <img src={prod.thumbnail} alt={prod.title} />
