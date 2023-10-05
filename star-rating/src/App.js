@@ -1,5 +1,5 @@
 import "./App.css";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 
 function App() {
@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <h1>Star Rating</h1>
-      {[...Array(5)].map((star, index) => {
+      {[...Array(5)].map((_, index) => {
         const currentRating = index + 1;
         return (
-          <label>
+          <label key={index}>
             <input
               type="radio"
               name="rating"
@@ -28,7 +28,9 @@ function App() {
           </label>
         );
       })}
-      <p>Total Rating is: {rating}</p>
+      <p>
+        Total Rating is: {rating} / {hover}
+      </p>
     </div>
   );
 }
